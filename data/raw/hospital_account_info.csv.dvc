@@ -1,0 +1,4 @@
+outs:
+- md5: dbbadfccb1831875094a256c5ceffa2b
+  size: 777542
+  path: hospital_account_info.csv

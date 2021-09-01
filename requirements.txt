@@ -1,0 +1,5 @@
+metaphone
+pandas
+pytest
+fuzzymatcher
+dvc
