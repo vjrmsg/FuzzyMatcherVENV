@@ -1,3 +1,9 @@
+C:\Work_Imp\DataScience\FuzzyMatcherVENV>cd Scripts
+
+C:\Work_Imp\DataScience\FuzzyMatcherVENV\Scripts>activate
+
+(FuzzyMatcherVENV) C:\Work_Imp\DataScience\FuzzyMatcherVENV>code .
+
 (FuzzyMatcherVENV) C:\Work_Imp\DataScience\FuzzyMatcherVENV>python template.py
 
 
@@ -28,6 +34,11 @@
 
 (FuzzyMatcherVENV) C:\Work_Imp\DataScience\FuzzyMatcherVENV>dvc repro
 
+(FuzzyMatcherVENV) C:\Work_Imp\DataScience\FuzzyMatcherVENV\src>python DynamoDB_CSV_Import.py ..\\data\\raw\\hospital_reimbursement.csv hospital_account_info
+
+npm config set strict-ssl false
+
+python -m pytest csvfilecheck.py --alluredir ./reports --ignore-mandatory
 
 
 

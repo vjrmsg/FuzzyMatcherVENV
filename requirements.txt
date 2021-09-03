@@ -3,3 +3,9 @@ pandas
 pytest
 fuzzymatcher
 dvc
+boto3
+datatest
+allure-pytest
+#pytest-allure-adaptor
+npm install allure-commandline --save-dev
+
