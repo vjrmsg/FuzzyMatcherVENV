@@ -8,6 +8,9 @@ from datatest import (
     Deviation,
 )
 
+@allure.story('Testing CSV File')
+@allure.feature('Testing path of the CSV file and Extension')
+@allure.testcase("CSV Test Case")
 @dt.working_directory(__file__)
 def setUpModule():
     global df
