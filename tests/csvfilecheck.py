@@ -27,14 +27,14 @@ def test_columns(df):
 @allure.step("Verify the address column")
 @allure.severity(allure.severity_level.MINOR)
 def test_Address(df):
-    dt.validate.regex(df['Address'],r'^[a-zA-Z0-9]')
+    dt.validate.regex(df['Address'],r'^[a-zA-Z0-9#(),]')
     pass
 
 @allure.step("Verify the Account_Num column")
 @allure.severity(allure.severity_level.MINOR)
 def test_Account_Num(df):
     #dt.validate(df['Account_Num'],int)
-    dt.validate.regex(df['Account_Num'],r'^[a-zA-Z0-9()]')    
+    dt.validate.regex(df['Account_Num'],r'^[0-9]')    
 
 def test_Facility_Name(df):
     dt.validate.regex(df['Facility Name'],r'^[a-zA-Z0-9()]')
