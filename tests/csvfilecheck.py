@@ -1,3 +1,4 @@
+import boto3
 import pytest
 import allure
 import pandas as pd
@@ -8,6 +9,7 @@ from datatest import (
     Invalid,
     Deviation,
 )
+
 @allure.story('Testing CSV File')
 @allure.feature('Testing path of the CSV file and Extension')
 @allure.testcase("CSV Test Case")
@@ -33,8 +35,8 @@ def test_Address(df):
 @allure.step("Verify the Account_Num column")
 @allure.severity(allure.severity_level.MINOR)
 def test_Account_Num(df):
-    #dt.validate(df['Account_Num'],int)
-    dt.validate.regex(df['Account_Num'],r'^[0-9]')    
+    dt.validate(df['Account_Num'],int)
+    #dt.validate.regex(df['Account_Num'],r'^[0-9]')    
 
 def test_Facility_Name(df):
     dt.validate.regex(df['Facility Name'],r'^[a-zA-Z0-9()]')
