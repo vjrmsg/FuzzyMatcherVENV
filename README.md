@@ -38,7 +38,19 @@ C:\Work_Imp\DataScience\FuzzyMatcherVENV\Scripts>activate
 
 npm config set strict-ssl false
 
+Allure requires Java 8 or higher; 
+
+npm install -g allure-commandline --save-dev ...
+
 python -m pytest csvfilecheck.py --alluredir ./reports --ignore-mandatory
+python -m pytest Riedl_FuzzyMatcher_1_unittest.py --alluredir ./reports --ignore-mandatory
+
+-- The Allure Framework is a flexible and lightweight open source multi-language test reporting tool. It provides clear graphical reports and allows everyone involved in the development process to extract a maximum of information from the everyday software testing process.
+
+(FuzzyMatcherVENV) C:\Work_Imp\DataScience\FuzzyMatcherVENV\tests>python -m pytest csvfilecheck.py --alluredir ./reports --ignore-mandatory
+
+>allure serve ./reports
+
 
 
 
