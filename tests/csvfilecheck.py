@@ -38,28 +38,44 @@ def test_Account_Num(df):
     dt.validate(df['Account_Num'],int)
     #dt.validate.regex(df['Account_Num'],r'^[0-9]')    
 
+@allure.step("Verify the Facility Name column")
+@allure.severity(allure.severity_level.MINOR)
 def test_Facility_Name(df):
     dt.validate.regex(df['Facility Name'],r'^[a-zA-Z0-9()]')
 
+@allure.step("Verify the City column")
+@allure.severity(allure.severity_level.MINOR)
 def test_city(df):
     dt.validate.regex(df['City'],r'^[a-zA-Z]')
 
+@allure.step("Verify the State column")
+@allure.severity(allure.severity_level.MINOR)
 def test_State(df):
     #dt.validate(df['State'],int)
     dt.validate.regex(df['State'],r'^[a-zA-Z]')
 
+@allure.step("Verify the ZIP Code column")
+@allure.severity(allure.severity_level.MINOR)
 def test_Zip_Code(df):
     dt.validate(df['ZIP Code'],int)
 #'','','',''
+@allure.step("Verify the County Name column")
+@allure.severity(allure.severity_level.MINOR)
 def test_County_Name(df):
     dt.validate.regex(df['County Name'],r'^[a-zA-Z]')
 
+@allure.step("Verify the Phone Number column")
+@allure.severity(allure.severity_level.MINOR)
 def test_Phone_Number(df):
     dt.validate.regex(df['Phone Number'],r'^[0-9+)(]')
 
+@allure.step("Verify the Hospital Type column")
+@allure.severity(allure.severity_level.MINOR)
 def test_Hospital_Type(df):
     dt.validate.regex(df['Hospital Type'],r'^[a-zA-Z]')
 
+@allure.step("Verify the Hospital Ownership column")
+@allure.severity(allure.severity_level.MINOR)
 def test_Hospital_Ownership(df):
     dt.validate.regex(df['Hospital Ownership'],r'^[a-zA-Z]')
 
