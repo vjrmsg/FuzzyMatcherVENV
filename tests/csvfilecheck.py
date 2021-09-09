@@ -48,6 +48,20 @@ def test_State(df):
     #dt.validate(df['State'],int)
     dt.validate.regex(df['State'],r'^[a-zA-Z]')
 
+def test_Zip_Code(df):
+    dt.validate(df['ZIP Code'],int)
+#'','','',''
+def test_County_Name(df):
+    dt.validate.regex(df['County Name'],r'^[a-zA-Z]')
+
+def test_Phone_Number(df):
+    dt.validate.regex(df['Phone Number'],r'^[0-9+)(]')
+
+def test_Hospital_Type(df):
+    dt.validate.regex(df['Hospital Type'],r'^[a-zA-Z]')
+
+def test_Hospital_Ownership(df):
+    dt.validate.regex(df['Hospital Ownership'],r'^[a-zA-Z]')
 
 if __name__=='__main__':
     from datatest import main
