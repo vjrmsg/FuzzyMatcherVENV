@@ -69,7 +69,7 @@ python -m pytest Riedl_FuzzyMatcher_1_unittest.py --alluredir ./tests/reports --
 
 allure serve ./reports
 
-
+cd
 (FuzzyMatcherVENV) C:\Work_Imp\DataScience\FuzzyMatcherVENV\src>python DynamoDB_CSV_Import.py ..\\data\\raw\\hospital_reimbursement.csv hospital_account_info
 
 (FuzzyNameMatching) (FuzzyMatcherVENV) C:\Work_Imp\DataScience\FuzzyMatcherVENV\src>python RapidFuzzDemo.py
