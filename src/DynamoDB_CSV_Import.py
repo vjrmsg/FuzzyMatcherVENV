@@ -1,27 +1,30 @@
 # Python Script to insert csv records in dynamodb table.
 from __future__ import print_function  # Python 2/3 compatibility
 from __future__ import division  # Python 2/3 compatiblity for integer division
-import argparse
+#import argparse
 import boto3
 from csv import reader
 import time
 import os
 # command line arguments
-parser = argparse.ArgumentParser(
-    description='Write CSV records to dynamo db table. CSV Header must map to dynamo table field names.')
-parser.add_argument('csvFile', help='..\\data\\raw\\hospital_account_infoNew.csv')
-parser.add_argument('table', help='hospital_account_info')
-parser.add_argument('writeRate', default=5, type=int, nargs='?',
-                    help='Number of records to write in table per second (default:5)')
-parser.add_argument('delimiter', default=',', nargs='?', help='Delimiter for csv records (default=,)')
-parser.add_argument('region', default='us-east-1', nargs='?', help='Dynamo db region name (default=us-east-1')
-args = parser.parse_args()
-print(args)
-
+#parser = argparse.ArgumentParser(
+#    description='Write CSV records to dynamo db table. CSV Header must map to dynamo table field names.')
+#parser.add_argument('csvFile', help='..\\data\\raw\\hospital_account_infoNew.csv')
+#parser.add_argument('table', help='hospital_account_info')
+#parser.add_argument('writeRate', default=5, type=int, nargs='?',
+#                    help='Number of records to write in table per second (default:5)')
+#parser.add_argument('delimiter', default=',', nargs='?', help='Delimiter for csv records (default=,)')
+#parser.add_argument('region', default='us-east-1', nargs='?', help='Dynamo db region name (default=us-east-1')
+#args = parser.parse_args()
+#print(args)
+csvFile='..\\data\\raw\\hospital_account_infoNew.csv'
+table='hospital_account_info'
+region='us-east-1'
+delimiter=','
 # dynamodb and table initialization
 endpointUrl = "https://dynamodb.us-east-1.amazonaws.com"
-dynamodb = boto3.resource('dynamodb', region_name=args.region, endpoint_url=endpointUrl)
-table = dynamodb.Table(args.table)
+dynamodb = boto3.resource('dynamodb', region_name=region, endpoint_url=endpointUrl)
+table = dynamodb.Table(table)
 print(table.name)
 table_name=table.name
 Account_Num='0'
@@ -29,8 +32,8 @@ id_counter=1
 id_table = boto3.resource('dynamodb').Table('hospital_account_info')
 
 # write records to dynamo db
-with open(args.csvFile) as csv_file:
-    tokens = reader(csv_file, delimiter=args.delimiter)
+with open(csvFile) as csv_file:
+    tokens = reader(csv_file, delimiter=delimiter)
     # read first line in file which contains dynamo db field names
     header = next(tokens)
     #print filename
@@ -67,4 +70,4 @@ with open(args.csvFile) as csv_file:
                 #print(header[val])
           #print(item)
         table.put_item(Item=item)
-        time.sleep(1 / args.writeRate)  # to accomodate max write provisioned capacity for table
+        time.sleep(1 / 5)  # to accomodate max write provisioned capacity for table

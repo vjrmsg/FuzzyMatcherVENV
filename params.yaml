@@ -1,0 +1,9 @@
+base:
+  project: person-matching-project
+
+data_source:
+  s3_source_hos: data/raw/hospital_account_info.csv
+  s3_source_rei: data/raw/hospital_reimbursement.csv
+
+load_data:
+  modified_dataset_csv: data/modified/hospital_reimbursement.csv

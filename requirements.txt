@@ -2,10 +2,12 @@ metaphone
 pandas
 pytest
 fuzzymatcher
+fuzzywuzzy
 dvc
 boto3
 datatest
 allure-pytest
-#pytest-allure-adaptor
-npm install allure-commandline --save-dev
+rapidfuzz
+openpyxl
+#npm install allure-commandline --save-dev
 

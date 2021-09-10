@@ -31,9 +31,10 @@ def fuzzymatch_csv (input_file_master,
 if __name__ == "__main__" :
     matched_results = fuzzymatch_csv (input_file_master = '..\\data\\raw\\hospital_account_info.csv',
                                   input_file_to_match_with_master = '..\\data\\raw\\hospital_reimbursement.csv',
-                                  list_columns_to_match_of_master_file = ["Facility Name", "Address", "City", "State"],
-                                  list_columns_to_match_with_master_file = ["Provider Name", "Provider Street Address", "Provider City",   "Provider State"],
+                                  list_columns_to_match_of_master_file = ["FacilityName", "Address", "City", "State"],
+                                  list_columns_to_match_with_master_file = ["ProviderName", "ProviderStreetAddress", "ProviderCity",   "ProviderState"],
                                   left_id_col='Account_Num',
                                   right_id_col='Provider_Num'
                                  )
     print(matched_results.head())
+

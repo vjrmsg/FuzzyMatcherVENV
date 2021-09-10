@@ -4,11 +4,13 @@ import os
 dirs = [
     os.path.join("data", "raw"),
     os.path.join("data","processed"),
+    os.path.join("data","modified"),
     "features",
     "pymdmentity",
     "notebooks",
     "saved_models",
-    "Results"
+    "Results",
+    "tests"
 ]
 
 for dir_ in dirs:
