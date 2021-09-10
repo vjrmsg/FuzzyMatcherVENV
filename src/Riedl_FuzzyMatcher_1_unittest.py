@@ -10,7 +10,7 @@ from datatest import (
     Invalid,
     Deviation,
 )
-from src.Riedl_FuzzyMatcher_1 import fuzzymatch_csv
+from Riedl_FuzzyMatcher_1 import fuzzymatch_csv
 
 @allure.story('Unit Testing')
 @allure.feature('Unit Testing')
